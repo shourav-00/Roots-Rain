@@ -170,7 +170,8 @@ const displayCat=(CatName,categoryName)=>{
 let Tprice=0;
 const addtocard=(name,price)=>{
         const getplace=document.getElementById("add-to-card");
-
+        const confirmed = confirm(`Are you sure you want to add ${name} to the cart?`);
+        if (!confirmed) return;
 
         const confirmation=document.getElementById("surity");
     
