@@ -1,5 +1,7 @@
 @import"tailwindcss";
 
-/* .cat-btn {
-  @apply cursor-pointer p-2 rounded-md transition;
-} */
+
+.active-category {
+    background-color: #03fb5a; /* green */
+    color: white;
+}

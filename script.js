@@ -11,7 +11,7 @@ const displayCategory=(data)=>{
         //console.log(element.category_name);
         const place=document.createElement("div");
         place.innerHTML=`
-            <div class='cat-btn'onclick="specificCat('${element.category_name}')">
+            <div class='cat-btn'onclick="specificCat('${element.category_name}',this)">
                 <h2 class="class="m-2">${element.category_name}</h2>   
             </div>
         `
@@ -105,12 +105,14 @@ middleSection();
 
 const specificCat=(categoryName,element)=>{
 
-    // document.querySelectorAll('.cat-btn').forEach(btn => {
-    //     btn.classList.remove('bg-green-700', 'text-white');
-    // });
+    document.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.classList.remove('bg-green-700', 'text-white'); 
+    });
 
-    // Add active class to clicked category
-    //element.classList.add('bg-green-700', 'text-white');
+    // Add active class to the clicked button
+    if (element) {
+        element.classList.add('bg-green-700','text-white');
+    }
 
     // spinner
     const spinner = document.getElementById("spinner");
