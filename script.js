@@ -8,7 +8,6 @@ const displayCategory=(data)=>{
     const getplace=document.getElementById('category');
     getplace.innerHTML="";
     data.forEach(element => {
-        //console.log(element.category_name);
         const place=document.createElement("div");
         place.innerHTML=`
             <div class='cat-btn'onclick="specificCat('${element.category_name}',this)">
@@ -20,7 +19,6 @@ const displayCategory=(data)=>{
 
     });
 }
-
 category();
 
 
@@ -62,28 +60,25 @@ const displayMiddle=(data)=>{
     });
 
 }
-
-const modal = (name, image, category, price, description) => {
-    // If modal already exists, remove it first
+const modal=(name, image, category, price, description)=>{
     const existing = document.getElementById("overlay");
     if (existing) existing.remove();
 
-    // Create overlay
     const overlay = document.createElement("div");
-    overlay.id = "overlay"; // important!
+    overlay.id="overlay";
     overlay.className = "fixed inset-0 flex justify-center items-center z-50";
 
-    // Create modal content
     const get = document.createElement("div");
-    get.className = "bg-white rounded-lg shadow-lg p-6 w-[90%] md:w-[60%] lg:w-[40%] flex flex-col max-h-[80vh] overflow-y-auto";
+    get.className="bg-white rounded-lg shadow-lg p-6 w-[90%] md:w-[60%] lg:w-[40%] flex flex-col max-h-[80vh] overflow-y-auto";
 
-    get.innerHTML = `
+    get.innerHTML=`
         <h2 class="p-2 font-bold">${name}</h2>
         <img class="w-full h-40 object-cover" src="${image}" alt="coming">
         <div class="p-2 font-bold">${category}</div>
         <p class="p-2 font-bold">$<span>${price}</span></p>
+        
         <p class="p-2">${description}</p>
-        <button class="button bg-white m-2 text-center">Close</button>
+        <button class="button bg-white m-2 text-center font-bold">Close</button>
     `;
 
     overlay.appendChild(get);
@@ -109,7 +104,7 @@ const specificCat=(categoryName,element)=>{
         btn.classList.remove('bg-green-700', 'text-white'); 
     });
 
-    // Add active class to the clicked button
+    
     if (element) {
         element.classList.add('bg-green-700','text-white');
     }
@@ -129,15 +124,16 @@ const displayCat=(CatName,categoryName)=>{
     getplace.innerHTML="";
 
 
-    const filteredPlants = []; // ← empty array to store results
+    const filteredPlants = [];
 
     CatName.forEach(ele => {
-        if (ele.category === categoryName) { // check condition
-            filteredPlants.push(ele); // add matching item to array
+        if (ele.category === categoryName) 
+            { 
+            filteredPlants.push(ele); 
         }
     });
 
-    //console.log(filteredPlants); // now you have all plants in this category
+    //console.log(filteredPlants); 
     filteredPlants.forEach(element => {
         const place=document.createElement("div");
 
