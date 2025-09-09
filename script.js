@@ -12,7 +12,7 @@ const displayCategory=(data)=>{
         const place=document.createElement("div");
         place.innerHTML=`
             <div class='cat-btn'onclick="specificCat('${element.category_name}',this)">
-                <h2 class="class="m-2 ">${element.category_name}</h2>   
+                <h2 class="font-bold ">${element.category_name}</h2>   
             </div>
         `
         getplace.appendChild(place);
